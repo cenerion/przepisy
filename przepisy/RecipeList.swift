@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct lista: View {
+struct RecipeList: View {
     var body: some View {
         NavigationSplitView {
-            Text("Landmarks Content")
+            Text("Content")
                 .navigationTitle("Featured")
         } detail: {
-            Text("Select a Landmark")
+            Text("Select a Recipe")
         }
     }
 }
 
 #Preview {
-    lista()
+    RecipeList()
 }
