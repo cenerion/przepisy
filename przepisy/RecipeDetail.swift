@@ -23,7 +23,7 @@ struct RecipeDetail: View {
                 Text(ingridient.name)
             }
             
-            ForEach(recipe.comments) { comment in
+            ForEach(recipe.comments, id: \.self) { comment in
                 Text(comment.username)
                 Text(comment.content)
             }

@@ -32,8 +32,7 @@ struct Ingridient: Hashable, Codable{
     var quantity: Int
 }
 
-struct Comment: Hashable, Codable, Identifiable {
-    var id: Int
+struct Comment: Hashable, Codable{
     var username: String
     var content: String
     var date: Date
