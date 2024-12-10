@@ -1,6 +1,27 @@
 [
     {
-        id: 0,
-        
+        "id": 0,
+        "name": "nazwa przepisu",
+        "description": "opis przepisu",
+        "rating": 4.6,
+        "ingridients": [
+            {
+                "name": "cebula",
+                "quantity": 3
+            },
+            {
+                "name": "czosnek",
+                "quantity": 1
+            }
+        ],
+        "imagesNames": ["img0"],
+        "comments": [
+            {
+                "id": 0,
+                "username": "grazyna246",
+                "content": "wspaniałe!",
+                "date": "2024-03-20T20:00:00+01:00"
+            }
+        ]
     }
 ]

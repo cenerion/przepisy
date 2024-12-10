@@ -27,12 +27,13 @@ struct Recipe: Hashable, Codable, Identifiable {
 }
 
 
-struct Ingridient: Hashable, Codable {
+struct Ingridient: Hashable, Codable{
     var name: String
     var quantity: Int
 }
 
-struct Comment: Hashable, Codable {
+struct Comment: Hashable, Codable, Identifiable {
+    var id: Int
     var username: String
     var content: String
     var date: Date

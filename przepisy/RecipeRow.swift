@@ -7,22 +7,27 @@
 import SwiftUI
 
 struct RecipeRow: View {
-    //var recipe: Recipe
+    var recipe: Recipe
 
     var body: some View {
-        HStack {
-            VStack{
-                Text("Title")
-                Text("Description")
-            }
-            Text("Hello, World!")
+        HStack{
+            recipe.images[0]
+                .resizable()
+                .frame(width: 50, height: 50)
+            
+            Text(recipe.name)
+            
+            Spacer()
         }
     }
 }
 
 
 #Preview {
-    RecipeRow(/*recipe: recipes[0]*/)
-        .frame(height: 300)
+    NavigationLink{
+        RecipeRow(recipe: recipes[0])
+    } label: {
+        RecipeRow(recipe: recipes[0])
+    }
         
 }

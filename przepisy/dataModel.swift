@@ -8,7 +8,7 @@
 import Foundation
 
 
-var recipes: [Recipe] = load("recipesData.json")
+var recipes: [Recipe] = load("recipes.json")
 
 
 func load<T: Decodable>(_ filename: String) -> T {
@@ -30,6 +30,7 @@ func load<T: Decodable>(_ filename: String) -> T {
 
     do {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         return try decoder.decode(T.self, from: data)
     } catch {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")

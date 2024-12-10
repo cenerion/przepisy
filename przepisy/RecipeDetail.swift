@@ -7,17 +7,30 @@
 import SwiftUI
 
 struct RecipeDetail: View {
-    //var recipe: Recipe
+    var recipe: Recipe
     
     var body: some View {
         ScrollView {
-            Image("empty_image")
-                .frame(height: 300)
-            Text("yay")
+            ForEach(0..<recipe.images.count, id: \.self) {idx in
+                recipe.images[idx]
+                    .frame(height: 300)
+            }
+            
+            Text(recipe.name)
+            Text(recipe.description)
+            
+            ForEach(recipe.ingridients, id: \.self) { ingridient in
+                Text(ingridient.name)
+            }
+            
+            ForEach(recipe.comments) { comment in
+                Text(comment.username)
+                Text(comment.content)
+            }
         }
     }
 }
 
 #Preview {
-    RecipeDetail(/*recipe: recipes[0]*/)
+    RecipeDetail(recipe: recipes[0])
 }

@@ -11,7 +11,15 @@ struct RecipeList: View {
     var body: some View {
         NavigationSplitView {
             Text("Content")
-                .navigationTitle("Featured")
+            List(recipes) { recipe in
+                NavigationLink{
+                    RecipeDetail(recipe: recipe)
+                } label: {
+                    RecipeRow(recipe: recipe)
+                }
+                
+            }
+            .navigationTitle("Featured")
         } detail: {
             Text("Select a Recipe")
         }
