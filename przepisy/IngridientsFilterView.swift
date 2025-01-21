@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IngridientsFilterView: View {
     let ing = ["czosnek", "papryka"]
-    @State var selected: [String] = []
+    @Binding var selected: [String]
     @State private var searchText = ""
     
     var body: some View {
@@ -51,5 +51,7 @@ struct SelectionCell: View {
 }
 
 #Preview {
-    IngridientsFilterView()
+    @Previewable
+    @State var ing:[String] = []
+    IngridientsFilterView(selected: $ing)
 }

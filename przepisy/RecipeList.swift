@@ -9,10 +9,18 @@ import SwiftUI
 
 struct RecipeList: View {
     @State var searchText:String = ""
+    @State var ingridientsFilter: [String] = []
     
     var body: some View {
         NavigationSplitView {
+            NavigationLink{
+                //IngridientsFilterView()
+            } label: {
+                Text("Filter")
+            }
+            
             Text("Content")
+            
             List(recipes) { recipe in
                 NavigationLink{
                     RecipeDetail(recipe: recipe)
@@ -25,7 +33,7 @@ struct RecipeList: View {
             .searchable(text: $searchText)
             
         } detail: {
-            Text("Select a Recipe")
+            IngridientsFilterView(selected: $ingridientsFilter)
         }
         
     }
