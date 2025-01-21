@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RecipeList: View {
+    @State var searchText:String = ""
+    
     var body: some View {
         NavigationSplitView {
             Text("Content")
@@ -20,9 +22,12 @@ struct RecipeList: View {
                 
             }
             .navigationTitle("Featured")
+            .searchable(text: $searchText)
+            
         } detail: {
             Text("Select a Recipe")
         }
+        
     }
 }
 
